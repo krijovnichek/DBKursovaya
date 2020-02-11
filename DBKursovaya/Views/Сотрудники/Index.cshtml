@@ -1,0 +1,84 @@
+﻿@model IEnumerable<DBKursovaya.Models.Сотрудники>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Имя_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отчество_сотрудника)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Должность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Зарплата)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер_телефона)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отделы1.Какая_нибудь_еще_штука)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Фамилия_сотрудника)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Имя_сотрудника)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Отчество_сотрудника)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Дата_рождения)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Должность)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Зарплата)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Номер_телефона)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.e_mail)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Отделы1.Какая_нибудь_еще_штука)
+        </td>*@
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_сотрудника }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_сотрудника }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_сотрудника })
+        </td>
+    </tr>
+}
+
+</table>

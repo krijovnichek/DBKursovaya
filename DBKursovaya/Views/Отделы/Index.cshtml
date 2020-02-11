@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DBKursovaya.Models.Отделы>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Название_подразделения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Наличие_какой_нибудь_фигни)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Какая_нибудь_еще_штука)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сотрудники.Фамилия_сотрудника)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Название_подразделения)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Наличие_какой_нибудь_фигни)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Какая_нибудь_еще_штука)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Сотрудники.Фамилия_сотрудника)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Название_подразделения }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Название_подразделения })
+    </td>
+</tr>
+}
+
+</table>
